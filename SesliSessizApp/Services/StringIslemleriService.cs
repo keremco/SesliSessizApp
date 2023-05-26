@@ -51,5 +51,29 @@
             return sonuc;
 
         }
+
+        public string IlkHarfleriBuyult(string cumle)
+        {
+            string sonuc = "";
+
+            if (string.IsNullOrWhiteSpace(cumle))
+            {
+                return "Lütfen minimum bir kelime içeren bir cümle giriniz";
+            }
+            else
+            {
+                string[] kelimeler = cumle.Split(' ');
+
+                foreach (string kelime in kelimeler)
+                {
+                    sonuc += kelime.Substring(0, 1).ToUpper();
+                    sonuc += kelime.Substring(1).ToLower();
+                    sonuc += " ";
+                }
+
+            }
+
+            return sonuc.Trim();
+        }
     }
 }
