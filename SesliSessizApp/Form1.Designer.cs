@@ -94,6 +94,7 @@
             this.bTemizle.TabIndex = 5;
             this.bTemizle.Text = "Temizle";
             this.bTemizle.UseVisualStyleBackColor = true;
+            this.bTemizle.Click += new System.EventHandler(this.bTemizle_Click);
             // 
             // rtbSonuc
             // 

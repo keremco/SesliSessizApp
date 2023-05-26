@@ -15,6 +15,11 @@ namespace SesliSessizApp
             rtbSonuc.Text = _servis.SesliSessizHarfBul(tbKelime.Text.Trim(), rbSesli.Checked);
         }
 
-        
+        private void bTemizle_Click(object sender, EventArgs e)
+        {
+            tbKelime.Text = "";
+            rtbSonuc.Text = "";
+            rbSesli.Checked = true;
+        }
     }
 }
