@@ -11,6 +11,7 @@
         {
             string sonuc = "";
 
+            bool sesliHarfMi;
             if (sesliMi)
             {
                 foreach (char kelimeHarf in kelime)
@@ -19,9 +20,30 @@
                     {
                         if(kelimeHarf.ToString().ToLower() == sesliHarf)
                         {
+                            if (!sonuc.Contains(kelimeHarf.ToString()))
                             sonuc = sonuc + kelimeHarf;
                             break;
                         }
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < kelime.Length; i++)
+                {
+                    sesliHarfMi = false;
+                    for (int j = 0; j < _sesliler.Length; j++)
+                    {
+                        if (kelime[i].ToString().ToLower() == _sesliler[j])
+                        {
+                            sesliHarfMi = true;
+                            break;
+                        }
+                    }
+
+                    if (!sesliHarfMi)
+                    {
+                        if (!sonuc.Contains(kelime[i].ToString())) sonuc += kelime[i];
                     }
                 }
             }
